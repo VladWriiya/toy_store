@@ -36,7 +36,9 @@ router.get("/", async(req,res) => {
 router.get("/prices", async(req,res) => {
   try {
     const limit = 10;
-    const skip = req.query.skip ? Number(req.query.skip) * limit : 0;
+    const skip = req.query.skip || 0;
+    const sort = "price";
+    const reverse = req.query.reverse == "yes" ? -1 : 1;
     const min = req.query.min ? Number(req.query.min) : 0;
     const max = req.query.max ? Number(req.query.max) : 10000;
 
@@ -46,7 +48,7 @@ router.get("/prices", async(req,res) => {
       })
       .limit(limit)
       .skip(skip)
-      .sort({ _id: 1 });
+      .sort({[sort]: reverse})
 
     res.json(data);
   }
