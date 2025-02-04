@@ -1,0 +1,125 @@
+[
+    {
+      "name": "Racing Car",
+      "info": "High-speed racing car toy",
+      "category": "Vehicles",
+      "img_url": "https://images.pexels.com/photos/35967/mini-cooper-auto-model-vehicle.jpg?auto=compress&cs=tinysrgb&w=600",
+      "price": 19.99
+    },
+    {
+      "name": "Doll House",
+      "info": "Beautiful doll house with furniture",
+      "category": "Dolls",
+      "img_url": "https://images.pexels.com/photos/191360/pexels-photo-191360.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 49.99
+    },
+    {
+      "name": "Action Figure",
+      "info": "Hero action figure with accessories",
+      "category": "Figures",
+      "img_url": "https://images.pexels.com/photos/264905/pexels-photo-264905.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 14.99
+    },
+    {
+      "name": "Train Set",
+      "info": "Electric train set with tracks",
+      "category": "Vehicles",
+      "img_url": "https://images.pexels.com/photos/273062/pexels-photo-273062.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 59.99
+    },
+    {
+      "name": "Plush Bear",
+      "info": "Soft and cuddly plush bear",
+      "category": "Plush",
+      "img_url": "https://images.pexels.com/photos/30484896/pexels-photo-30484896.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 12.99
+    },
+    {
+      "name": "Fire Truck",
+      "info": "Fire truck with lights and sounds",
+      "category": "Vehicles",
+      "img_url": "https://images.pexels.com/photos/28495269/pexels-photo-28495269.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 24.99
+    },
+    {
+      "name": "Princess Doll",
+      "info": "Princess doll with a beautiful gown",
+      "category": "Dolls",
+      "img_url": "https://images.pexels.com/photos/14897008/pexels-photo-14897008.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 29.99
+    },
+    {
+      "name": "Robot Warrior",
+      "info": "Robot warrior with light-up eyes",
+      "category": "Figures",
+      "img_url": "https://images.pexels.com/photos/30467836/pexels-photo-30467836.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 19.99
+    },
+    
+    {
+      "name": "Stuffed Bunny",
+      "info": "Adorable stuffed bunny toy",
+      "category": "Plush",
+      "img_url": "https://images.pexels.com/photos/4887080/pexels-photo-4887080.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 10.99
+    },
+    
+    {
+      "name": "Alien Figure",
+      "info": "Glow-in-the-dark alien figure",
+      "category": "Figures",
+      "img_url": "https://images.pexels.com/photos/30483668/pexels-photo-30483668.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 17.99
+    },
+    {
+      "name": "Police Car",
+      "info": "Police car with siren sounds",
+      "category": "Vehicles",
+      "img_url": "https://images.pexels.com/photos/4177334/pexels-photo-4177334.jpeg",
+      "price": 22.99
+    },
+    {
+      "name": "Teddy Bear",
+      "info": "Classic teddy bear toy",
+      "category": "Plush",
+      "img_url": "https://images.pexels.com/photos/869517/pexels-photo-869517.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 14.99
+    },
+    {
+      "name": "Mermaid Doll",
+      "info": "Mermaid doll with shiny tail",
+      "category": "Dolls",
+      "img_url": "https://images.pexels.com/photos/18156023/pexels-photo-18156023.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 27.99
+    },
+    {
+      "name": "Knight Figure",
+      "info": "Knight figure with sword and shield",
+      "category": "Figures",
+      "img_url": "https://images.pexels.com/photos/350784/pexels-photo-350784.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 18.99
+    },
+    {
+      "name": "Ambulance",
+      "info": "Ambulance with flashing lights",
+      "category": "Vehicles",
+      "img_url": "https://images.pexels.com/photos/426404/pexels-photo-426404.jpeg",
+      "price": 23.99
+    },
+    {
+      "name": "Plush Elephant",
+      "info": "Cute plush elephant toy",
+      "category": "Plush",
+      "img_url": "https://images.pexels.com/photos/4886916/pexels-photo-4886916.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 15.99
+    },
+    {
+      "name": "Dinosaur Figure",
+      "info": "Dinosaur figure with movable parts",
+      "category": "Figures",
+      "img_url": "https://images.pexels.com/photos/30467835/pexels-photo-30467835.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 16.99
+    }
+    
+  ]
+  

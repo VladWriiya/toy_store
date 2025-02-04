@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT' crossorigin='anonymous'>
+  <title>Toys API Documentation</title>
+  <style>
+    .container { padding: 20px; }
+    .table { margin-top: 20px; }
+    h2 { margin-top: 40px; }
+    .note { color: #dc3545; }
+    .response-example { background: #f8f9fa; padding: 10px; border-radius: 4px; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Toys API Documentation</h1>
+
+    <h2>Toys API</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Route</th>
+          <th>Description</th>
+          <th>Parameters / Request Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GET</td>
+          <td>/toys</td>
+          <td>Returns a list of toys according to the query parameters</td>
+          <td>
+            <strong>skip</strong> (optional): number of items to skip for pagination<br>
+            <strong>sort</strong> (optional): field to sort by (default: "_id")<br>
+            <strong>reverse</strong> (optional): if "yes", sorts in descending order<br>
+            <strong>category_id</strong> (optional): filter by category ID<br>
+            <strong>s</strong> (optional): search query for toy names and descriptions<br>
+            <div class="note">Note: Results are limited to 10 items per request</div>
+          </td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>/toys/prices/?min='Number' &max='Number' </td>
+          <td>Returns toys filtered by price range with pagination</td>
+          <td>
+            <strong>min</strong> (optional): minimum price (default: 0)<br>
+            <strong>max</strong> (optional): maximum price (default: 10000)<br>
+            <strong>skip</strong> (optional): page number (0 = first page, 1 = second page, etc.)<br>
+            <div class="note">Note: Results are limited to 10 items per page</div>
+          </td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>/toys/single/:id</td>
+          <td>Returns a single toy by ID</td>
+          <td><strong>id</strong>: the ID of the toy to retrieve</td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>/toys/search</td>
+          <td>Returns toys matching a search query</td>
+          <td><strong>s</strong>: search query for toy names/descriptions</td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>/toys?category=</td>
+          <td>Returns toys by category</td>
+          <td><strong>ctegory</strong>: category name to filter by</td>
+        </tr>
+        <tr>
+          <td>POST</td>
+          <td>/toys</td>
+          <td>Adds a new toy. <span class="note">Token required!</span></td>
+          <td>
+            Request Body JSON:<br>
+            {<br>
+            &nbsp;&nbsp;name: String (2-400 chars, required),<br>
+            &nbsp;&nbsp;info: String (2-100 chars, required),<br>
+            &nbsp;&nbsp;category: String (2-400 chars, required),<br>
+            &nbsp;&nbsp;price: Number (1-999, required),<br>
+            &nbsp;&nbsp;img_url: String (5-500 chars, optional)<br>
+            }<br>
+            <div class="note">Note: user_id is automatically added from token</div>
+          </td>
+        </tr>
+        <tr>
+          <td>PUT</td>
+          <td>/toys/:id</td>
+          <td>Updates an existing toy. <span class="note">Token required!</span></td>
+          <td>
+            <strong>id</strong>: ID of toy to update<br>
+            Request Body JSON: same as POST<br>
+            <div class="note">Note: Users can only edit their own toys</div>
+          </td>
+        </tr>
+        <tr>
+          <td>DELETE</td>
+          <td>/toys/:id</td>
+          <td>Deletes a toy. <span class="note">Token required!</span></td>
+          <td>
+            <strong>id</strong>: ID of toy to delete<br>
+            <div class="note">Note: Regular users can only delete their own toys, admins can delete any toy</div>
+          </td>
+        </tr>
+        <tr>
+          <td>COUNT</td>
+          <td>/toys/count</td>
+          <td>Show how many items in store exist</td>
+          <td>
+            <strong>N/A<br>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Users API</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Route</th>
+          <th>Description</th>
+          <th>Parameters / Request Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GET</td>
+          <td>/users</td>
+          <td>Test endpoint to check if server is running</td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>/users/list</td>
+          <td>Get list of all users. <span class="note">Admin token required!</span></td>
+          <td>
+            <strong>skip</strong> (optional): number of items to skip<br>
+            <div class="note">Note: Results are limited to 10 items per request</div>
+          </td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>/users/info</td>
+          <td>Get authenticated user information. <span class="note">Token required!</span></td>
+          <td>N/A</td>
+        </tr>
+        <tr>
+          <td>POST</td>
+          <td>/users</td>
+          <td>Create a new user</td>
+          <td>
+            Request Body JSON:<br>
+            {<br>
+            &nbsp;&nbsp;name: String (2-100 chars, required),<br>
+            &nbsp;&nbsp;email: String (2-100 chars, valid email, required),<br>
+            &nbsp;&nbsp;password: String (3-128 chars, required)<br>
+            }
+          </td>
+        </tr>
+        <tr>
+          <td>POST</td>
+          <td>/users/login</td>
+          <td>Authenticate user and receive JWT token</td>
+          <td>
+            Request Body JSON:<br>
+            {<br>
+            &nbsp;&nbsp;email: String (required),<br>
+            &nbsp;&nbsp;password: String (required)<br>
+            }<br>
+            <div class="response-example">
+              Response: { token: "JWT_TOKEN" }<br>
+              Token validity: 600 minutes
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>PATCH</td>
+          <td>/users/role/:id/:role</td>
+          <td>Change user role. <span class="note">Admin token required!</span></td>
+          <td>
+            <strong>id</strong>: User ID<br>
+            <strong>role</strong>: New role to assign
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>User Permissions</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Admin</th>
+          <th>Default User</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Can add new toys</td>
+          <td>Can add new toys</td>
+        </tr>
+        <tr>
+          <td>Can edit all toys</td>
+          <td>Can only edit their own toys</td>
+        </tr>
+        <tr>
+          <td>Can delete all toys</td>
+          <td>Can only delete their own toys</td>
+        </tr>
+        <tr>
+          <td>Can view list of all users</td>
+          <td>Cannot view user list</td>
+        </tr>
+        <tr>
+          <td>Can change user roles</td>
+          <td>Cannot change roles</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Additional Information</h2>
+    <ul>
+      <li>All responses include <code>createdAt</code> and <code>updatedAt</code> timestamps</li>
+      <li>JWT tokens contain user ID and role information</li>
+      <li>Tokens expire after 600 minutes (10 hours)</li>
+      <li>All toy records include <code>user_id</code> field indicating the creator</li>
+    </ul>
+
+    <footer class="mt-5">
+      <p>© 2025 Toys NodeJS/MongoDB/API Documentation</p>
+    </footer>
+  </div>
+</body>
+</html>
